@@ -1,0 +1,322 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    
+    <title>Hacking through Irish trad | Ryan Txanson</title>
+
+                                        
+                        
+        
+                                
+        <meta name="keywords" content="irish tunes, accompaniment, chords, patterns">
+    <meta property="og:title" content="Hacking through Irish trad | Ryan Txanson">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ryantxanson.com/blog/irish-trad-for-programmers">
+        <meta property="og:site_name" content="">
+        <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@pyry" />
+    <meta name="twitter:creator" content="@pyry" />
+    <meta name="twitter:title" content="Hacking through Irish trad | Ryan Txanson" />
+    <meta name="twitter:description" content="False" />
+    <meta name="twitter:image:src" content="https://placekitten.com/g/800/320" />
+    <meta name="twitter:url" content="https://ryantxanson.com/blog/irish-trad-for-programmers" />
+
+        <meta name="viewport" content="width=device-width" />
+
+    
+                <link rel="stylesheet" 
+              href="/media/css/app.combined.css" 
+              type="text/css" 
+              media="all">
+        <link rel="stylesheet" 
+              href="/media/css/style.css" 
+              type="text/css" 
+              media="all">
+    
+        
+    
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' href='/media/css/ie.css' type='text/css' media='all' />
+    <![endif]-->
+
+</head>
+
+    <body class="blog">
+        <div class="contain-to-grid">
+                            <a href="/" class="brand"><span>Ryan Txanson</span></a>
+                        <!-- Starting the Top-Bar -->
+    <nav class="top-bar" data-options="is_hover:false">
+        <ul class="title-area">
+            <li class="name">&nbsp;</li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul class="clearfix right">
+                                                <li ><a
+                    href="/">Home</a></li>
+                                                <li class="active"><a
+                    href="/blog/">Blog</a></li>
+                            </ul>
+        </section>
+    </nav>
+        </div>
+
+        <header class="row" role="banner"> </header>
+
+                                                                
+                    <div class="wrapper half banner-image">
+                    <div class="cover">
+                <div class="wide-brand">
+                    <a href="/" class="hipster-stamp"><span>Ryan Txanson</span></a>
+                </div>
+                <div class="cover-image" style="background-image: url('/media/img/banner/kontor.jpg');">
+                    <div class="row">
+                        <div class="pitch large-12 large-centered columns">
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="after-banner">
+            <div class="contain-to-grid wide-nav">
+                <!-- Starting the Top-Bar -->
+    <nav class="top-bar" data-options="is_hover:false">
+        <ul class="title-area">
+            <li class="name">&nbsp;</li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul class="clearfix right">
+                                                <li ><a
+                    href="/">Home</a></li>
+                                                <li class="active"><a
+                    href="/blog/">Blog</a></li>
+                            </ul>
+        </section>
+    </nav>
+            </div>
+
+            <div class="row">
+                            <hr class="spacer" />
+                        </div>
+        
+            <!-- Start the main container -->
+            <section class="container" role="document">
+                <div class="row">
+
+                                    
+                
+<div class="small-12 large-12 columns entry-full entry-half" role="main">
+    <article class="reading-block">
+        <div class="row">
+            <div class="large-4 small-12 columns left-col">
+                <header class="">
+                    <h1 class="entry-title uncolumned">
+                        <span class="">Hacking through Irish trad</span>
+                    </h1>
+                    <span class="meta">
+                        <time datetime="2014-03-04">
+                            2014-03-04
+                        </time>                    </span>
+                </header>
+                <div class="illustrations hide-mobile">
+                                    </div>
+            </div>
+
+                            <div class="large-2 small-12 columns center-col tldr">
+                        <p>Does computationally analyzing a set of Irish traditional tunes help
+        identify a learning progression?</p>
+                </div>
+                            
+            <div class="large-6 small-12 columns right-col">
+                <div class="entry-content nocolumns  dropcap_first ">
+                    <p><span class="dropcap">T</span>he typical progression for learning a new thing
+is to practice at it a lot, but sometimes identifying where to begin is a
+trick. What are the things you need to know first, and what are the things that
+are less important, and you can
+come to&nbsp;later?</p>
+<p>Irish traditional music has long fascinated me, and I think for some of the
+same reasons as human languages and programming languages. There&#8217;s lots of
+structure, lots of variation, and the process of &#8216;acquiring&#8217; Irish music is
+similar to acquiring a new language. Tunes are mainly passed on by ear, though
+notation is a handy resource. It&#8217;s hard to even imagine how many tunes the
+genre may contain: <a href="http://thesession.org">The Session</a>, a database of Irish
+tunes, recordings, and a discussion forum, has thousands submitted. Most
+musicians may actively know a couple hundred tunes by memory, and have passive
+recall of many more. There&#8217;s a tune for&nbsp;everything.</p>
+<h3>Identifying&nbsp;patterns</h3>
+<p>While looking around for resources for learning piano accompaniment for Irish
+trad, I came across <a href="http://home.comcast.net/~saustin98/lark/">Vashon Celtic Tunes</a>. 
+The programmer in me saw one big plaintext file, I mused over how I could get
+something out of it, so I came up with&nbsp;this&#8230;</p>
+<p>One of the pain points with learning accompaniment in a genre with too many
+tunes for one person to learn, is that it is impossible to know everything,
+but, as you learn more,  you learn the general patterns to be able to intuit
+your way through it. Guitarists at sessions do this all the time, but it is a
+little tricky if you&#8217;re more of a beginner: you may not know what patterns to
+expect&#8212; so why not find a way to identify them&nbsp;automatically? </p>
+<p>I wrote a quick and dirty script in Python that reads all the chord
+descriptions and tunes, and for each tune type and key, sorts all the tunes by
+chords present. Here&#8217;s a plain and simple example that&#8217;s probably apparent to
+99% of Irish trad musicians: jigs in&nbsp;D! </p>
+<p>After sorting, we find the two largest subcategories, the second is very
+similar to the first, but with a less frequent <code>Em</code> chord to spice things up.
+These may essentially be the same category, really, but the script doesn&#8217;t know&nbsp;that.</p>
+<pre><code>Jigs in D (57 tunes)
+
+D, A, G
+
+- Behind the Haystack: D (42%), A (40%), G (19%)
+- The Black Rogue: D (47%), A (31%), G (22%)
+- Dennis Murphy's: D (47%), A (38%), G (16%)
+- Gillian's Apples: D (59%), A (28%), G (13%)
+- Haste To The Wedding: D (53%), A (34%), G (13%)
+- Jerry's Beaver Hat: D (75%), A (16%), G (9%)
+- My Darling asleep: D (63%), A (22%), G (16%)
+- The Rambling Pitchfork: D (59%), A (25%), G (16%)
+- Sean Bui: D (63%), A (25%), G (13%)
+
+D, A, G, Em
+
+- Gallant Tipperary: D (42%), A (23%), G (20%), Em (14%)
+- The Rose In The Heather: D (56%), A (19%), G (19%), Em (6%)
+- Sarah's Jig: D (52%), A (31%), G (13%), Em (4%)
+- Shandon Bells: D (63%), A (22%), G (9%), Em (6%)
+- Smash The Windows: D (66%), A (19%), G (9%), Em (6%)
+- When Sick, Is It Tea That You Want?: D (59%), A (25%), G (9%), Em (6%)
+</code></pre>
+<p>There are some interesting other things to be found though, a healthy subset of
+these <code>D</code> jigs prefer to emphasize a <code>Bm</code> over the more common <code>G</code>, or use it almost&nbsp;equally:</p>
+<pre><code>D, A, Bm, G
+
+- The Cordal Jig: D (41%), A (31%), Bm (19%), G (9%)
+- Paddy's return: D (44%), A (19%), Bm (19%), G (19%)
+- The Three Note Jig: D (44%), A (38%), Bm (13%), G (6%)
+- Tripping Up The Stairs: D (38%), A (31%), Bm (25%), G (6%)
+</code></pre>
+<p>For reels in <code>D</code>, there&#8217;s a similar pattern, but something interesting emerges:
+the second most frequent chord for tunes with three common chords can vary:
+sometimes <code>A</code> is overwhelmingly the second most common, and sometimes it&#8217;s <code>G</code>.</p>
+<pre><code>Reels in D
+
+D, A, G
+
+- The Blackthorn Stick: D (66%), A (25%), G (9%)
+- The Cameronian: D (59%), A (34%), G (6%)
+- Grren Mountain: D (66%), A (28%), G (6%)
+- Hand Me Down The Tackle: D (59%), A (25%), G (16%)
+- Humours Of Westport: D (59%), A (28%), G (13%)
+- Katie's Reel: D (47%), A (34%), G (19%)
+- Lady Anne Montgomery: D (69%), A (22%), G (9%)
+- Last Night's Fun: D (66%), A (22%), G (13%)
+- Merry Blacksmith (Paddy on the Railroad)): D (56%), A (38%), G (6%)
+- Morpeth Rant: D (50%), A (28%), G (22%)
+- Mountain road: D (63%), A (25%), G (13%)
+- Paddy on the Railroad (Merry Blacksmith): D (56%), A (38%), G (6%)
+- Petronella: D (59%), A (28%), G (13%)
+- Providence Reel: D (59%), A (22%), G (19%)
+- Roaring Mary: D (59%), A (25%), G (16%)
+- The Wild Irishman: D (59%), A (38%), G (3%)
+- The Wise Maid: D (63%), A (19%), G (19%)
+
+D, G, A
+
+- The Boyne Hunt: D (69%), G (19%), A (13%)
+- Boys of the Lough: D (59%), G (28%), A (13%)
+- Danny Meehan's: D (47%), G (28%), A (25%)
+- John Brennan's: D (56%), G (25%), A (19%)
+- Lady On The Island: D (56%), G (25%), A (19%)
+- McDermott's: D (60%), G (33%), A (6%)
+- Miss Monahan's: D (59%), G (25%), A (16%)
+- Rolling In The Rye Grass: D (63%), G (25%), A (13%)
+- Saint Anne's Reel: D (59%), G (22%), A (19%)
+- Tom Billy's: D (59%), G (22%), A (19%)
+- Wind That Shakes The Barley: D (50%), G (31%), A (19%)
+</code></pre>
+<p>Two additional subsets also include <code>Em</code> in this: those with <code>D, A, G, Em</code>, and
+those with <code>D, G, A, Em</code>.</p>
+<h3>TODOs&#8230;</h3>
+<p>Obviously, 500 is a small sample to work with when considering the possibility
+that this is only a 5th of what exists, or even less. But, this concept scales
+up: if you were to include another 1,000 tunes, you would likely find the same&nbsp;categories.</p>
+<p>Similarly, the use of &#8220;keys&#8221; is not completely accurate: keys and modes would
+be better, and perhaps identify more understandable and expected patterns, but,
+the data doesn&#8217;t always provide a mode (though I&#8217;m sure it can be&nbsp;predicted).</p>
+<h3>All the&nbsp;data</h3>
+<p>Go take a peek at all the data on Github, along with the script to generate.
+Also, you&#8217;ll find some notes and other things in that repo that I&#8217;m writing up as I&nbsp;learn&#8230;</p>
+<ul>
+<li><a href="https://github.com/rtxanson/tune_transcriptions/blob/master/accompaniment/sorted_by_chords.md">All the&nbsp;chords</a></li>
+<li><a href="https://github.com/rtxanson/tune_transcriptions/blob/master/accompaniment/misc/chord_sort.py">Sorting&nbsp;script</a></li>
+<li><a href="https://github.com/rtxanson/tune_transcriptions/tree/master/accompaniment">Github&nbsp;repo</a></li>
+</ul>                </div>
+            </div>
+        </div>
+            </article>
+    <hr class="pinstripe"></hr>
+
+    <div class="article_nav small-12 large-12"><div class="left small-12 large-2">
+                <a href="/blog/property-history">
+                    <span class="direction">«</span>
+                    <span class="title">Minneapolis property history: data for consideration</span>
+                    <time datetime="2014-05-01">
+                        2014-05-01
+                    </time>
+                </a>
+        </div><div class="right small-12 large-2"><a href="/blog/national-grammar-day">
+                    <span class="direction">»</span>
+                    <span class="title">National Grammar I'm Awesome Day</span>
+                    <time datetime="2014-03-04">
+                        2014-03-04
+                    </time>
+                </a>
+            </div>
+    </div>
+
+    
+                                </div>
+
+            </section>
+
+            <div class="row full-width">
+                            </div>
+
+            <div class="footer-wrapper">
+                <footer class="row full-width" role="contentinfo">
+                    <div class="small-12 large-12 columns">
+                        <p>[This space intentionally left blank.]</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <script type="text/javascript" src="/media/js/app.combined.js" async></script>
+            <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+            <script>
+              WebFont.load({
+                google: {
+                  families: ['Droid Sans Mono', 'Open Sans', 'Alfa Slab One', 'Open Sans:bold', 'Open Sans:light', 'Open Sans:lighter']
+                },
+                custom: { }
+              });
+            </script>
+                
+        
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44208105-1', 'ryantxanson.com');
+  ga('send', 'pageview');
+</script>    </body>
+</html>

@@ -1,0 +1,229 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    
+    <title>Translation to Qglic with Finite State Transducers | Ryan Txanson</title>
+
+                                        
+                        
+        
+                                
+        <meta name="keywords" content="minneapolis, web developer, programmer, linguist, NLP, responsive">
+    <meta property="og:title" content="Translation to Qglic with Finite State Transducers | Ryan Txanson">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ryantxanson.com/blog/qglic-fst">
+        <meta property="og:site_name" content="">
+        <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@pyry" />
+    <meta name="twitter:creator" content="@pyry" />
+    <meta name="twitter:title" content="Translation to Qglic with Finite State Transducers | Ryan Txanson" />
+    <meta name="twitter:description" content="False" />
+    <meta name="twitter:image:src" content="https://placekitten.com/g/800/320" />
+    <meta name="twitter:url" content="https://ryantxanson.com/blog/qglic-fst" />
+
+        <meta name="viewport" content="width=device-width" />
+
+    
+                <link rel="stylesheet" 
+              href="/media/css/app.combined.css" 
+              type="text/css" 
+              media="all">
+        <link rel="stylesheet" 
+              href="/media/css/style.css" 
+              type="text/css" 
+              media="all">
+    
+        
+    
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' href='/media/css/ie.css' type='text/css' media='all' />
+    <![endif]-->
+
+</head>
+
+    <body class="blog">
+        <div class="contain-to-grid">
+                            <a href="/" class="brand"><span>Ryan Txanson</span></a>
+                        <!-- Starting the Top-Bar -->
+    <nav class="top-bar" data-options="is_hover:false">
+        <ul class="title-area">
+            <li class="name">&nbsp;</li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul class="clearfix right">
+                                                <li ><a
+                    href="/">Home</a></li>
+                                                <li class="active"><a
+                    href="/blog/">Blog</a></li>
+                            </ul>
+        </section>
+    </nav>
+        </div>
+
+        <header class="row" role="banner"> </header>
+
+                                                                
+                    <div class="wrapper half banner-image">
+                    <div class="cover">
+                <div class="wide-brand">
+                    <a href="/" class="hipster-stamp"><span>Ryan Txanson</span></a>
+                </div>
+                <div class="cover-image" style="background-image: url('/media/img/banner/kontor.jpg');">
+                    <div class="row">
+                        <div class="pitch large-12 large-centered columns">
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="after-banner">
+            <div class="contain-to-grid wide-nav">
+                <!-- Starting the Top-Bar -->
+    <nav class="top-bar" data-options="is_hover:false">
+        <ul class="title-area">
+            <li class="name">&nbsp;</li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul class="clearfix right">
+                                                <li ><a
+                    href="/">Home</a></li>
+                                                <li class="active"><a
+                    href="/blog/">Blog</a></li>
+                            </ul>
+        </section>
+    </nav>
+            </div>
+
+            <div class="row">
+                            <hr class="spacer" />
+                        </div>
+        
+            <!-- Start the main container -->
+            <section class="container" role="document">
+                <div class="row">
+
+                                    
+
+<div class="small-12 large-12 columns entry-full entry-half" role="main">
+    <article class="reading-block">
+        <div class="row">
+            <div class="large-4 small-12 columns left-col">
+                <header class="">
+                    <h1 class="entry-title uncolumned">
+                        <span class="">Translation to Qglic with Finite State Transducers</span>
+                    </h1>
+                    <span class="meta">
+                        <time datetime="2010-08-04">
+                            2010-08-04
+                        </time>                    </span>
+                </header>
+                <div class="illustrations hide-mobile">
+                                    </div>
+            </div>
+
+                                        
+            <div class="large-7 small-12 columns right-col">
+                <div class="entry-content nocolumns ">
+                    <p><a href="http://qglic.com">Qglic</a> (pronounced <em>Anglish</em>) is a near-phonemic alternative writing system for English. Being near-phonemic, the goal is to have as close to a one-to-one correspondence between sounds in English and the letters used to represent these. One of the benefits to Qglic is that it attempts to do this using only the letters A through Z. You can see a small sample of it following, which is this paragraph but just written in&nbsp;Qglic.</p>
+<blockquote>
+<p>Qglic iz ey funymik qltrnutiv ruyti&#8217;g sistum for I&#8217;glic. Byi&#8217;g funymik (or nirly so), xu gol iz tu hav ez klos tw ey wun-tu-wun koruspqnduns bitwyn saondz in I&#8217;glic and xu letrz ywzd tu reprizent xu saondz. Wun uv xu benufits ti Qglic iz xat it utemps ti dw xis ywzi&#8217;g only xu letrz A xrw Z. Yw kan sy u smol sampul uv it fqloi&#8217;g, witc iz xis perugraf but dcist ritun in&nbsp;Qglic.</p>
+</blockquote>
+<p>I discovered Qglic a year or so ago, but recently remembered it and became all excited about it again. Using my newly acquired skills in various language technological applications, I spent some time putting together a simple finite-state machine based on the phonemic rules of Qglic, and the <a href="http://www.speech.cs.cmu.edu/cgi-bin/cmudict"><span class="caps">CMU</span> Pronouncing Dictionary</a>, which is vast and contains a huge amount of words (approximately 133,000). The <span class="caps">CMU</span> Pronouncing Dictionary contains pronunciation guides written with <a href="http://en.wikipedia.org/wiki/Arpabet">Arpabet</a>, which means it&#8217;s fairly easy to translate it into <span class="caps">IPA</span> or in this case,&nbsp;Qglic.</p>
+<pre><code>ABSCOND  AE0 B S K AA1 N D
+ABSCONDED  AE0 B S K AA1 N D AH0 D
+ABSCONDING  AE0 B S K AA1 N D IH0 NG 
+ABSCONDS  AE0 B S K AA1 N D Z
+ABSECON  AE1 B S AH0 K AO0 N
+ABSENCE  AE1 B S AH0 N S
+ABSENCES  AE1 B S AH0 N S IH0 Z
+ABSENT  AE1 B S AH0 N T
+ABSENTEE  AE2 B S AH0 N T IY1
+ABSENTEEISM  AE2 B S AH0 N T IY1 IH0 Z AH0 M
+ABSENTEES  AE2 B S AH0 N T IY1
+</code></pre>
+<p>Taking this data, I wrote a short Python script (I&#8217;ll upload it somewhere at some point soon) to translate the pronunciation guides into Qglic, and then convert them to a format used to produce a file format compatible with the <a href="http://www.ling.helsinki.fi/kieliteknologia/tutkimus/hfst/">Helsinki Finite State Transducer</a>&nbsp;(<span class="caps">HFST</span>):</p>
+<pre><code>abscond:abskqnd         ennd ;
+absconded:abskqndud             ennd ;
+absconding:abskqndi'g               ennd ;
+absconds:abskqndz               ennd ;
+absecon:absukon         ennd ;
+absence:absuns          ennd ;
+absences:absunsiz               ennd ;
+</code></pre>
+<p>It&#8217;s a very simple finite-state machine, as far as the amount of effort put into producing it. It consists of just a huge list of words in the format of english:qglic, which represents a beginning path and the end path in the machine. The result is very fast: a 385 word article on Naomi Campbell testifying before a war-crimes tribunal from <span class="caps">CNN</span> is converted to Qglic in just 0.143 seconds, and the whole of <em>The Importance of Being Earnest</em> translates in about 1.3&nbsp;seconds.</p>
+<p>There are still some issues to work out, such as how I tokenize text, so, punctuation isn&#8217;t perfect, and thus results in more words not being translated&#8230; However, since I&#8217;m using the <span class="caps">CMU</span> database, there are very few words that don&#8217;t make it through, and if they don&#8217;t, it&#8217;s most likely a result of a tokenization&nbsp;error.</p>
+<p>One of the other problems is that words which are homonymous are not handled ideally now (the first homonym is used always), which results in funny spellings when a word is both a noun and a verb (&#8216;The farmers prodúce próduce&#8217;) but used as the other (&#8216;*The farmers próduce prodúce.&#8217;). Problems like these could be solved with a few more hours of work implementing already existing technologies to disambiguate between the two words based on sentence-sized contexts. If I get a little more time to work on this, maybe I&#8217;ll iron those problems out and put some of the larger texts up online that are&nbsp;&#8220;translated&#8221;. </p>
+<p>Instead, enjoy a couple paragraphs of <a href="http://edition.cnn.com/2010/CRIME/08/04/sierra.leone.supermodel.testimony/index.html">Naomi Campbell&#8217;s court case</a>, which has been cleaned up for punctuation issues that I need to fix. Looking through it otherwise, I see there is at least one other issue. See if you can spot it, or find more!&nbsp;;) </p>
+<h3>Neyomy Kambul wil testufuy in wor kruymz truyl&nbsp;xrzdey</h3>
+<blockquote>
+<p>(cnn) &#8212; Ey dcudc in xu wor kruymz truyl uv formr Luybiryun prezidunt Tcqrlz Teylr haz disuydid xat swprmqdul Neyomy Kambulz testumony in xu keys wil go uhed&nbsp;xrzdey. </p>
+<p>Xu specul kort uv Syeru Lyon kunfrmd ti syenen wenzdey xat kambul wil teyk xu stand at xu trubywnul, dispuyt an imrdcunsy mocun xu difens fuyld mundey ti diley hr&nbsp;testumony. </p>
+<p>Prqsikywtrz sey Teylr geyv Kambul ey duymund dri&#8217;g xu wor in Syeru Lyon, kqntrudikti&#8217;g Teylrz testumony xat hy nevr handuld xu precus stonz xat fywuld xu&nbsp;kunflikt. </p>
+</blockquote>
+
+                </div>
+            </div>
+        </div>
+            </article>
+    <hr class="pinstripe"></hr>
+
+    <div class="article_nav small-12 large-12"><div class="left small-12 large-2">
+                <a href="/blog/qglic-ideas">
+                    <span class="direction">«</span>
+                    <span class="title">Ideas for a more flexible Qglic</span>
+                    <time datetime="2011-06-28">
+                        2011-06-28
+                    </time>
+                </a>
+        </div><div class="right small-12 large-2"></div>
+    </div>
+
+    
+                                </div>
+
+            </section>
+
+            <div class="row full-width">
+                            </div>
+
+            <div class="footer-wrapper">
+                <footer class="row full-width" role="contentinfo">
+                    <div class="small-12 large-12 columns">
+                        <p>[This space intentionally left blank.]</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <script type="text/javascript" src="/media/js/app.combined.js" async></script>
+            <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+            <script>
+              WebFont.load({
+                google: {
+                  families: ['Droid Sans Mono', 'Open Sans', 'Alfa Slab One', 'Open Sans:bold', 'Open Sans:light', 'Open Sans:lighter']
+                },
+                custom: { }
+              });
+            </script>
+                
+        
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44208105-1', 'ryantxanson.com');
+  ga('send', 'pageview');
+</script>    </body>
+</html>
