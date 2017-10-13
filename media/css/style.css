@@ -14,7 +14,8 @@ nav ul li a,.toggle-topbar a,.toggle-topbar a span,li.name,.top-bar.expanded,.to
 .cover-image h1 a{color:#eef;font-weight:100;text-shadow:1px 1px 0 #444}
 .cover-image h1.post_title a{color:#fff;font-size:140%;font-weight:900;text-shadow:1px 1px rgba(0,0,0,0.4)}
 .cover-image h4.subheader{color:#ccd;text-shadow:1px 1px 0 #888;margin-top:0}
-@media only screen and (max-width: 500px){.cover-image h1 a{color:#eef;font-weight:100;text-shadow:none}
+@media only screen and (max-width: 500px){body.blog section.container[role=document]{padding:2em}
+.cover-image h1 a{color:#eef;font-weight:100;text-shadow:none}
 .cover-image h4.subheader{color:#ccd;text-shadow:none}
 }.half .cover-image{height:12em}
 .caption p{font-size:10pt;text-align:right;opacity:.8}
